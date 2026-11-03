@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CF Theme Lab</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brandmark" aria-hidden="true"><span></span><i></i><b></b></div>
+      <div class="brand-copy">
+        <p class="eyebrow">CODEFORCES / THEME LAB</p>
+        <h1>Make it yours<span>.</span></h1>
+      </div>
+      <span class="edition">01</span>
+    </header>
+
+    <section class="status-row" aria-live="polite">
+      <div class="status-copy">
+        <span class="status-dot" id="statusDot"></span>
+        <div>
+          <strong id="statusTitle">Theme enabled</strong>
+          <small id="statusDescription">Ready for your next solve.</small>
+        </div>
+      </div>
+      <label class="switch" aria-label="Enable or disable Codeforces theme">
+        <input id="enabledToggle" type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <div class="section-heading">
+      <span>01</span>
+      <h2>Choose your canvas</h2>
+      <span class="rule"></span>
+    </div>
+
+    <section class="theme-grid" aria-label="Available themes">
+      <button class="theme-card bauhaus selected" data-theme="bauhaus" type="button" aria-pressed="true">
+        <span class="theme-art bauhaus-art" aria-hidden="true">
+          <i class="shape shape-red"></i><i class="shape shape-blue"></i><i class="shape shape-yellow"></i><i class="shape shape-black"></i>
+        </span>
+        <span class="theme-meta">
+          <strong>Bauhaus</strong>
+          <small>Bold · geometric · functional</small>
+        </span>
+        <span class="selected-mark" aria-hidden="true">✓</span>
+      </button>
+
+      <button class="theme-card papercut" data-theme="papercut" type="button" aria-pressed="false">
+        <span class="theme-art paper-art" aria-hidden="true">
+          <i class="paper paper-back"></i><i class="paper paper-mid"></i><i class="paper paper-front"></i><i class="paper-orb"></i>
+        </span>
+        <span class="theme-meta">
+          <strong>Papercut</strong>
+          <small>Soft · layered · playful</small>
+        </span>
+        <span class="selected-mark" aria-hidden="true">✓</span>
+      </button>
+    </section>
+
+    <div class="palette-line" aria-hidden="true">
+      <span class="swatch swatch-red"></span><span class="swatch swatch-blue"></span><span class="swatch swatch-yellow"></span><span class="swatch swatch-ink"></span>
+      <small id="paletteCaption">PRIMARY COLOURS / NO NOISE</small>
+    </div>
+
+    <footer class="footer">
+      <div class="site-state">
+        <span class="site-icon">CF</span>
+        <span id="siteMessage">Applies across Codeforces pages</span>
+      </div>
+    </footer>
+    <p class="privacy-note">Only theme settings are saved. No tracking or third-party requests.</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

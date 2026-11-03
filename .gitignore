@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.crx
+*.pem
+node_modules/
+.output/
+.wxt/
+dist/
+.env
+.env.*
+!.env.example

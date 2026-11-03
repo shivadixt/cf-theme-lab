@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for CF Theme Lab, a Codeforces visual theme extension.">
+  <title>CF Theme Lab — Privacy Policy</title>
+  <style>
+    :root { color-scheme: light; --paper:#f4efdf; --ink:#171714; --red:#df3b2f; --blue:#2459a6; --yellow:#f1c84b; }
+    * { box-sizing: border-box; }
+    body { margin:0; padding:40px 18px; background:var(--paper); color:var(--ink); font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; }
+    main { max-width:780px; margin:0 auto; padding:clamp(24px,5vw,48px); background:#fffdf5; border:2px solid var(--ink); box-shadow:8px 8px 0 var(--ink); }
+    .mark { display:flex; gap:7px; margin-bottom:24px; }
+    .mark i { display:block; width:20px; height:20px; border:2px solid var(--ink); }
+    .mark i:nth-child(1){background:var(--red)} .mark i:nth-child(2){background:var(--blue)} .mark i:nth-child(3){background:var(--yellow)}
+    h1 { font-size:clamp(2rem,6vw,3.25rem); line-height:1.05; margin:0 0 10px; letter-spacing:-.04em; }
+    h2 { margin:30px 0 8px; font-size:1.2rem; }
+    p, li { max-width:72ch; }
+    a { color:var(--blue); }
+    .date { color:#68645a; font-size:.9rem; }
+    footer { margin-top:36px; padding-top:16px; border-top:1px solid #c8c1ae; color:#68645a; font-size:.85rem; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="mark" aria-hidden="true"><i></i><i></i><i></i></div>
+  <h1>Privacy Policy</h1>
+  <p><strong>CF Theme Lab — Bauhaus &amp; Papercut</strong></p>
+  <p class="date">Last updated: November 2, 2026</p>
+  <p>CF Theme Lab changes the appearance of Codeforces pages and is designed to work locally in your browser.</p>
+
+  <h2>Information the extension handles</h2>
+  <ul>
+    <li><strong>Theme preferences:</strong> The extension stores two settings, <code>enabled</code> and <code>theme</code>, using Chrome's <code>chrome.storage.sync</code> API. Chrome may synchronize these preferences across your signed-in browsers when sync is enabled.</li>
+    <li><strong>Active tab URL:</strong> When the popup opens, it reads the active tab URL only to show whether the current tab is a Codeforces page. This value is not saved, logged, or transmitted.</li>
+    <li><strong>Codeforces page content:</strong> The content script applies the theme to the page being viewed. It does not collect, copy, or transmit page content, submissions, source code, handles, comments, or browsing history.</li>
+  </ul>
+
+  <h2>Data sharing and sale</h2>
+  <p>The extension does not sell or share user data with the developer or third parties. It does not make independent network requests to analytics, advertising, or developer servers, and it does not include tracking pixels. Chrome handles synchronization of the two saved preferences through its built-in Sync service when enabled.</p>
+
+  <h2>Remote code and external services</h2>
+  <p>The extension does not load remote scripts, remote stylesheets, or other executable code from external servers. Its styling and popup assets are packaged inside the extension.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong>Storage:</strong> Saves the <code>enabled</code> and <code>theme</code> preferences through Chrome Sync storage.</li>
+    <li><strong>Codeforces host access:</strong> Allows the content script and stylesheet to run on Codeforces domains so the page can be themed.</li>
+  </ul>
+
+  <h2>Retention and deletion</h2>
+  <p>The extension retains only the two theme preferences in Chrome Sync storage. You can remove the extension or clear its stored extension data through Chrome to remove these preferences. Chrome Sync retention and deletion are also subject to your Google account and browser sync settings.</p>
+
+  <h2>Changes and contact</h2>
+  <p>If data practices change, this policy will be updated before or alongside the relevant release. For privacy questions or support, use the contact method listed on the CF Theme Lab GitHub repository or Chrome Web Store listing.</p>
+
+  <footer>CF Theme Lab · A local-first visual theme for Codeforces.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,172 @@
+:root {
+  --paper: #f4efdf;
+  --surface: #fffaf0;
+  --ink: #171714;
+  --muted: #625f57;
+  --line: #292821;
+  --red: #df261f;
+  --blue: #1768b7;
+  --yellow: #f7ca32;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 368px;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+button, input { font: inherit; }
+.shell {
+  position: relative;
+  padding: 17px 17px 13px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, transparent 0 94%, rgba(23,104,183,.10) 94% 100%),
+    var(--paper);
+  border: 1px solid var(--line);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--line);
+}
+
+.brandmark {
+  position: relative;
+  flex: 0 0 43px;
+  height: 43px;
+  overflow: hidden;
+  background: var(--red);
+  border: 2px solid var(--line);
+  box-shadow: 3px 3px 0 var(--line);
+}
+.brandmark span { position: absolute; width: 23px; height: 23px; right: -2px; bottom: -2px; border-radius: 50%; background: var(--yellow); }
+.brandmark i { position: absolute; width: 12px; height: 28px; left: 5px; top: 7px; background: var(--ink); }
+.brandmark b { position: absolute; width: 12px; height: 12px; right: 5px; top: 5px; background: var(--blue); border: 1px solid var(--line); }
+
+.brand-copy { min-width: 0; }
+.eyebrow {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+h1 { margin: 0; font-size: 22px; line-height: 1.05; font-weight: 900; letter-spacing: -.055em; }
+h1 span { color: var(--red); }
+.edition {
+  margin-left: auto;
+  align-self: flex-start;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  background: var(--yellow);
+  font-size: 10px;
+  font-weight: 900;
+  box-shadow: 2px 2px 0 var(--line);
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 14px 0 16px;
+  padding: 10px 11px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  box-shadow: 3px 3px 0 var(--line);
+}
+.status-copy { display: flex; align-items: center; gap: 9px; }
+.status-copy strong { display: block; font-size: 12px; font-weight: 850; }
+.status-copy small { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
+.status-dot { width: 9px; height: 9px; border-radius: 50%; background: #2a8b58; box-shadow: 0 0 0 3px rgba(42,139,88,.13); }
+.status-dot.off { background: #8c8980; box-shadow: none; }
+
+.switch { position: relative; display: inline-block; width: 38px; height: 22px; flex: 0 0 auto; }
+.switch input { width: 0; height: 0; opacity: 0; }
+.slider { position: absolute; inset: 0; cursor: pointer; border: 1.5px solid var(--line); background: #d4cdbd; transition: .18s ease; }
+.slider::before { position: absolute; content: ""; width: 14px; height: 14px; left: 3px; top: 2.5px; background: var(--surface); border: 1px solid var(--line); transition: .18s ease; }
+.switch input:checked + .slider { background: var(--yellow); }
+.switch input:checked + .slider::before { transform: translateX(15px); background: var(--red); }
+.switch input:focus-visible + .slider { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.section-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.section-heading > span:first-child { color: var(--red); font-size: 10px; font-weight: 900; }
+.section-heading h2 { margin: 0; font-size: 12px; font-weight: 900; letter-spacing: .01em; }
+.section-heading .rule { flex: 1; height: 1px; background: var(--line); opacity: .45; }
+
+.theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.theme-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px;
+  text-align: left;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  box-shadow: 3px 3px 0 var(--line);
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .14s ease, outline-color .14s ease;
+}
+.theme-card:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--line); }
+.theme-card:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.theme-card.selected { outline: 2px solid var(--red); outline-offset: 2px; }
+.theme-card.papercut.selected { outline-color: #6a82ca; }
+
+.theme-art { position: relative; display: block; height: 65px; overflow: hidden; border: 1px solid rgba(23,23,20,.45); background: #f4efdf; }
+.bauhaus-art { background: #fff7e7; }
+.shape { position: absolute; display: block; }
+.shape-red { width: 27px; height: 48px; left: 9px; top: 8px; background: #df261f; }
+.shape-blue { width: 44px; height: 44px; right: 12px; top: 10px; border-radius: 50%; background: #1768b7; }
+.shape-yellow { width: 0; height: 0; left: 48px; top: 5px; border-left: 22px solid transparent; border-right: 22px solid transparent; border-bottom: 47px solid #f7ca32; }
+.shape-black { width: 32px; height: 8px; left: 13px; bottom: 6px; background: #171714; }
+
+.paper-art { background: #f5eee8; }
+.paper { position: absolute; display: block; width: 51px; height: 45px; border: 1px solid #493a4b; transform: rotate(-10deg); }
+.paper-back { left: 17px; top: 9px; background: #f4c96d; box-shadow: 3px 3px 0 #d9c6c0; }
+.paper-mid { left: 35px; top: 7px; background: #6a82ca; transform: rotate(9deg); box-shadow: 3px 3px 0 #d9c6c0; }
+.paper-front { left: 65px; top: 14px; background: #fffaf6; transform: rotate(-5deg); box-shadow: 3px 3px 0 #d9c6c0; }
+.paper-orb { position: absolute; right: 13px; bottom: -13px; width: 37px; height: 37px; border-radius: 50%; background: #ef765f; border: 1px solid #493a4b; }
+
+.theme-meta strong { display: block; font-size: 12px; font-weight: 900; }
+.theme-meta small { display: block; margin-top: 2px; color: var(--muted); font-size: 9px; line-height: 1.25; }
+.selected-mark { position: absolute; top: 6px; right: 6px; display: grid; place-items: center; width: 17px; height: 17px; color: #fff; background: var(--red); border: 1px solid var(--line); border-radius: 50%; font-size: 10px; font-weight: 900; opacity: 0; transform: scale(.8); transition: .14s ease; }
+.theme-card.selected .selected-mark { opacity: 1; transform: scale(1); }
+.theme-card.papercut .selected-mark { background: #6a82ca; }
+
+.palette-line { display: flex; align-items: center; gap: 5px; margin-top: 14px; padding: 9px 0 10px; border-top: 1px solid rgba(41,40,33,.45); }
+.swatch { display: inline-block; width: 18px; height: 8px; border: 1px solid var(--line); }
+.swatch-red { background: var(--red); }
+.swatch-blue { background: var(--blue); }
+.swatch-yellow { background: var(--yellow); }
+.swatch-ink { background: var(--ink); }
+.palette-line small { margin-left: auto; color: var(--muted); font-size: 8px; letter-spacing: .1em; font-weight: 850; }
+
+.footer { display: flex; align-items: center; justify-content: space-between; padding: 9px 0 0; border-top: 2px solid var(--line); }
+.site-state { display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 750; }
+.site-icon { display: grid; place-items: center; width: 23px; height: 23px; color: #fff; background: var(--blue); border: 1px solid var(--line); font-size: 8px; font-weight: 900; }
+.privacy-note { margin: 8px 0 0; color: var(--muted); font-size: 9px; text-align: center; }
+
+/* Papercut mode changes the popup itself to match the page palette. */
+body.papercut-mode { --paper: #f5eee8; --surface: #fffaf6; --ink: #352b36; --muted: #786b78; --line: #493a4b; --red: #ef765f; --blue: #6a82ca; --yellow: #f4c96d; }
+body.papercut-mode .shell { background: #f5eee8; }
+body.papercut-mode .brandmark { background: #6a82ca; }
+body.papercut-mode .brandmark span { background: #f4c96d; }
+body.papercut-mode .brandmark i { background: #352b36; }
+body.papercut-mode .brandmark b { background: #ef765f; }
+body.papercut-mode .status-row,
+body.papercut-mode .theme-card { box-shadow: 4px 4px 0 #d9c6c0, 7px 7px 0 rgba(73,58,75,.08); }
+body.papercut-mode .theme-card.selected { outline-color: #6a82ca; }
+body.papercut-mode .selected-mark { background: #6a82ca; }
