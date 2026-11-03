@@ -41,7 +41,6 @@ cf-theme-lab/
 ├── LICENSE
 ├── PRIVACY_POLICY.md
 ├── privacy.html
-└── CHROME_WEB_STORE_LISTING.md
 ```
 
 ## Privacy
